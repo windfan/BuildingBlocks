@@ -4,8 +4,8 @@ var app = express();
 
 
 app.get('/', function(request, response){
-	response.send('OK\n');
+	response.send('OK');
 });
 
 
-app.listen(3000);
+module.exports = app;
