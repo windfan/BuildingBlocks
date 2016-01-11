@@ -67,9 +67,6 @@ describe('Listing cities on /cities', function(){
 
 describe('Creating new cities', function(){
 
-	before(function(){
-
-	});
 
 	it('Returns a 201 status code', function(done){
 
@@ -89,6 +86,14 @@ describe('Creating new cities', function(){
 
 	});
 
+	it('Validates city name and description', function(done){
+
+		request(app)
+			.post('/cities')
+			.send('name=&description=')
+			.expect(400, done);
+
+	});
 });
 
 describe('Deleting cities', function(){
